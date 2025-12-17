@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - College Discord</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <style>
+        /* Specific CSS for the login layout */
+        .login-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background-color: #2f3136; /* Dark container */
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .login-box h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #b9bbbe;
+            font-size: 14px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #40444b;
+            color: #dcddde;
+            box-sizing: border-box;
+        }
+        #login-button {
+            width: 100%;
+            background-color: #7289da;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        #login-button:hover {
+            background-color: #677bc4;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: #7289da;
+            text-decoration: none;
+        }
+        #error-message {
+            color: #f04747;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        /* Style for auto-redirecting authenticated users */
+        body {
+            /* Ensures no scrollbar issues on mobile */
+            overflow: hidden; 
+        }
+    </style>
+</head>
+<body>
+    <div class="login-center">
+        <div class="login-box">
+            <h2>Welcome Back, Student!</h2>
+            <div id="error-message" style="display: none;"></div>
+            
+            <div class="input-group">
+                <label for="email">College Email (.edu)</label>
+                <input type="email" id="email" placeholder="student@mycollege.edu" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <button id="login-button">Login</button>
+            
+            <div class="signup-link">
+                Need an account? <a href="signup.html">Register Here</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/firebase-config.js" type="module"></script>
+    <script src="../assets/js/auth-logic.js" type="module"></script> 
+</body>
+</html>
+
