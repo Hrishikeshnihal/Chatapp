@@ -1,0 +1,101 @@
+/* /assets/css/main.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #36393f; /* Discord Dark */
+    color: #dcddde; /* Light text */
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; is often in HTML style for mobile full screen */
+}
+
+/* --- Chat Specific Styles --- */
+#chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensure chat view fills screen on index.html */
+}
+
+#chat-header {
+    background-color: #2f3136;
+    padding: 10px;
+    border-bottom: 1px solid #202225;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+#chat-header h3 {
+    margin: 0;
+    color: #ffffff;
+}
+
+#chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto; 
+    background-color: #36393f;
+}
+
+.message {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    padding: 2px 0;
+}
+
+.user {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.timestamp {
+    color: #6a6e70; 
+    font-size: 10px; 
+    margin-left: 5px;
+}
+
+/* System Message (Bot Output) Styling */
+.message.system {
+    border-left: 4px solid #43b581; /* Discord Green border */
+    padding-left: 10px;
+    margin-left: -5px; 
+    background-color: #2e3538; 
+    color: #c9ccd0;
+    font-style: italic;
+}
+
+.message.system .user {
+    color: #43b581 !important; 
+}
+
+/* Input Area */
+.message-input-area {
+    background-color: #2f3136; 
+    padding: 15px;
+    border-top: 1px solid #202225;
+    display: flex;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #40444b; 
+    color: white;
+    margin-right: 10px;
+    outline: none;
+}
+
+#send-button {
+    background-color: #7289da; /* Discord blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
