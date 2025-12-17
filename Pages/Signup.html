@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - College Discord</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    
+    <style>
+        /* Reusing and extending login styles for consistency */
+        .signup-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        .signup-box {
+            background-color: #2f3136;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .signup-box h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #b9bbbe;
+            font-size: 14px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #40444b;
+            color: #dcddde;
+            box-sizing: border-box;
+        }
+        #signup-button {
+            width: 100%;
+            background-color: #43b581; /* Discord Green for Sign Up */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        #signup-button:hover {
+            background-color: #3aa673;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .login-link a {
+            color: #7289da;
+            text-decoration: none;
+        }
+        #error-message, #success-message {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #error-message {
+            color: #f04747;
+        }
+        #success-message {
+            color: #43b581;
+        }
+        body {
+            /* Ensures no scrollbar issues on mobile */
+            overflow-y: auto; 
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-center">
+        <div class="signup-box">
+            <h2>Create Your College Account</h2>
+            <div id="error-message" style="display: none;"></div>
+            <div id="success-message" style="display: none;"></div>
+            
+            <div class="input-group">
+                <label for="username">Username / Display Name</label>
+                <input type="text" id="username" placeholder="e.g., Alex_Tutor" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">College Email (.edu)</label>
+                <input type="email" id="email" placeholder="student@mycollege.edu" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password (min 6 characters)</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" required>
+            </div>
+            
+            <button id="signup-button">Register Account</button>
+            
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login Here</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/firebase-config.js" type="module"></script>
+    <script src="../assets/js/signup-logic.js" type="module"></script>
+</body>
+</html>
+
